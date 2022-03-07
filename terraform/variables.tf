@@ -20,19 +20,19 @@ variable "vpc_id" {
 variable "hub_image" {
   type        = string
   description = "The selenium container image to use for the hub node"
-  default = "selenium/hub:3.141.59"
+  default = "selenium/hub:4.1.2-20220217"
 }
 
 variable "chrome_image" {
   type        = string
   description = "The selenium container image to use for the chrome nodes"
-  default = "selenium/node-chrome:3.141.59-20210713"
+  default = "selenium/node-chrome:4.1.2-20220217"
 }
 
 variable "firefox_image" {
   type        = string
   description = "The selenium container image to use for the firefox nodes"
-  default = "selenium/node-firefox:3.141.59-20210713"
+  default = "selenium/node-firefox:4.1.2-20220217"
 }
 
 variable "subnet_ids_elb" {
@@ -59,13 +59,13 @@ variable "subnet_ids_hub" {
 variable "chrome_scale_up" {
   description = "The number of containers to add when scaling out"
   type = number
-  default = 3
+  default = 1
 }
 
 variable "firefox_scale_up" {
   description = "The number of containers to add when scaling out"
   type = number
-  default = 3
+  default = 1
 }
 
 variable "chrome_cpu_scale_in_threshold" {
@@ -100,12 +100,12 @@ variable "firefox_min_tasks" {
 
 variable "chrome_max_tasks" {
   type = number
-  default = 10
+  default = 4
 }
 
 variable "firefox_max_tasks" {
   type = number
-  default = 10
+  default = 4
 }
 
 variable "hub_cpu" {
