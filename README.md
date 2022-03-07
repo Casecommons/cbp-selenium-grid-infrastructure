@@ -31,15 +31,12 @@ subnet_ids_elb = ["",""]
 
 Open a terminal, enter the root of this repo and execute:
 ```shell
-# initialise  
-terraform -chdir=terraform init -backend-config="key=selenium_grid_state"
-
-# see what resources are going to be added/removed/changed, before taking action
-terraform -chdir=terraform plan
 
 # deploy the resources
-terraform -chdir=terraform apply -refresh=true 
+cd terraform
+sh terraform_init.sh
 ```
+
 
 Note the outputs
 ```
