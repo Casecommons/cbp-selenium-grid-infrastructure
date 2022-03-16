@@ -14,7 +14,7 @@
         "command": [
             "/bin/bash",
             "-c",
-            "PRIVATE=$(curl -s $ECS_CONTAINER_METADATA_URI_V4/task | jq -r '.Containers[0].Networks[0].IPv4Addresses[0]') ; export REMOTE_HOST=\"http://$PRIVATE:5555\" ; /opt/bin/entry_point.sh"
+            "PRIVATE=$(curl -s $ECS_CONTAINER_METADATA_URI_V4/task | jq -r '.Containers[0].Networks[0].IPv4Addresses[0]') ; export SE_NODE_HOST=\"$PRIVATE\" ; /opt/bin/entry_point.sh"
         ],
         "environment": [
             {
