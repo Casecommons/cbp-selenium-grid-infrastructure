@@ -80,12 +80,12 @@ variable "firefox_cpu_scale_in_threshold" {
 
 variable "chrome_cpu_scale_out_threshold" {
   type = number
-  default = 90
+  default = 45
 }
 
 variable "firefox_cpu_scale_out_threshold" {
   type = number
-  default = 90
+  default = 45
 }
 
 variable "chrome_min_tasks" {
