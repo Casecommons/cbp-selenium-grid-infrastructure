@@ -30,12 +30,8 @@
                 "value": "4443"
             },
             {
-                "name": "NODE_MAX_SESSION",
-                "value": "6"
-            },
-            {
-                "name": "NODE_MAX_INSTANCES",
-                "value": "6"
+                "name": "SE_OPTS",
+                "value": "--override-max-sessions true --max-sessions 6 --session-timeout 7200"
             },
             {
                 "name": "SCREEN_HEIGHT",
