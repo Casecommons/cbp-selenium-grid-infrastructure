@@ -29,9 +29,17 @@
                 "name": "SE_EVENT_BUS_SUBSCRIBE_PORT",
                 "value": "4443"
             },
-            {
-                "name": "SE_OPTS",
-                "value": "--override-max-sessions true --max-sessions 6 --session-timeout 7200"
+            {   
+                "name": "SE_NODE_MAX_SESSIONS",
+                "value": "6"
+            },
+            {   
+                "name": "SE_NODE_OVERRIDE_MAX_SESSIONS",
+                "value": "true"
+            },
+            {   
+                "name": "SE_SESSION_REQUEST_TIMEOUT",
+                "value": "7200"
             },
             {
                 "name": "SCREEN_HEIGHT",
