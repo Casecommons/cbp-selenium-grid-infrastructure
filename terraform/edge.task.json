@@ -1,0 +1,63 @@
+[
+    {
+        "name": "${app_name}-edge",
+        "image": "${image}",
+        "portMappings": [
+            {
+                "hostPort": 5555,
+                "protocol": "tcp",
+                "containerPort": 5555
+            }
+        ],
+        "essential": true,
+        "entryPoint": [],
+        "command": [
+            "/bin/bash",
+            "-c",
+            "PRIVATE=$(curl -s $ECS_CONTAINER_METADATA_URI_V4/task | jq -r '.Containers[0].Networks[0].IPv4Addresses[0]') ; export SE_NODE_HOST=\"$PRIVATE\" ; /opt/bin/entry_point.sh"
+        ],
+        "environment": [
+            {
+                "name": "SE_EVENT_BUS_HOST",
+                "value": "hub.${app_name}"
+            },
+            {
+                "name": "SE_EVENT_BUS_PUBLISH_PORT",
+                "value": "4442"
+            },
+            {
+                "name": "SE_EVENT_BUS_SUBSCRIBE_PORT",
+                "value": "4443"
+            },
+            {
+                "name": "SE_NODE_MAX_SESSIONS",
+                "value": "6"
+            },
+            {   
+                "name": "SE_NODE_OVERRIDE_MAX_SESSIONS",
+                "value": "true"
+            },
+            {   
+                "name": "SE_SESSION_REQUEST_TIMEOUT",
+                "value": "7200"
+            },
+            {
+                "name": "SCREEN_HEIGHT",
+                "value": "1080"
+            },
+            {
+                "name": "SCREEN_WIDTH",
+                "value": "1920"
+            }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-create-group": "true",
+                "awslogs-group": "${app_name}",
+                "awslogs-region": "${aws_region}",
+                "awslogs-stream-prefix": "edge"
+            }
+        }
+    }
+]

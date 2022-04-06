@@ -35,6 +35,12 @@ variable "firefox_image" {
   default = "selenium/node-firefox:4.1.2-20220217"
 }
 
+variable "edge_image" {
+  type        = string
+  description = "The selenium container image to use for the edge nodes"
+  default = "selenium/node-edge:4.1.2-20220217"
+}
+
 variable "subnet_ids_elb" {
    type    = list(string)
    description = "The subnet ids for the elb"
@@ -68,12 +74,23 @@ variable "firefox_scale_up" {
   default = 1
 }
 
+variable "edge_scale_up" {
+  description = "The number of containers to add when scaling out"
+  type = number
+  default = 1
+}
+
 variable "chrome_cpu_scale_in_threshold" {
   type = number
   default = 10
 }
 
 variable "firefox_cpu_scale_in_threshold" {
+  type = number
+  default = 10
+}
+
+variable "edge_cpu_scale_in_threshold" {
   type = number
   default = 10
 }
@@ -88,6 +105,11 @@ variable "firefox_cpu_scale_out_threshold" {
   default = 90
 }
 
+variable "edge_cpu_scale_out_threshold" {
+  type = number
+  default = 90
+}
+
 variable "chrome_min_tasks" {
   type = number
   default = 1
@@ -98,12 +120,22 @@ variable "firefox_min_tasks" {
   default = 1
 }
 
+variable "edge_min_tasks" {
+  type = number
+  default = 1
+}
+
 variable "chrome_max_tasks" {
   type = number
   default = 4
 }
 
 variable "firefox_max_tasks" {
+  type = number
+  default = 4
+}
+
+variable "edge_max_tasks" {
   type = number
   default = 4
 }
@@ -129,5 +161,13 @@ variable "firefox_cpu" {
 }
 
 variable "firefox_mem" {
+  type = number
+}
+
+variable "edge_cpu" {
+  type = number
+}
+
+variable "edge_mem" {
   type = number
 }
