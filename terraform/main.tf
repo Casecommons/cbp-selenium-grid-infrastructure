@@ -350,3 +350,59 @@ resource "aws_ecs_service" "chrome" {
   task_definition = aws_ecs_task_definition.chrome.arn
 
 }
+
+## Definition for Edge container
+resource "aws_ecs_task_definition" "edge" {
+  family                = "${var.app_name}-edge"
+  network_mode          = "awsvpc"
+  container_definitions = templatefile("edge.task.json",
+    {
+      aws_region    = var.aws_region
+      image         = var.edge
+      app_name      = var.app_name
+    }
+  )
+
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = var.edge_cpu
+  memory                   = var.edge_mem
+  execution_role_arn       = aws_iam_role.ecs_task_role.arn
+
+}
+
+## Service for Edge container
+
+resource "aws_ecs_service" "edge" {
+  name          = "${var.app_name}-edge"
+  cluster       = aws_ecs_cluster.selenium_grid.id
+  desired_count = var.edge_min_tasks
+
+  tags = {
+    Selenium-Role = "${var.app_name}-edge"
+    ROLE          = "${var.app_name}"
+  }
+  propagate_tags = "SERVICE"
+
+  lifecycle {
+    ignore_changes = [desired_count]
+  }
+
+  network_configuration {
+    subnets          = var.subnet_ids_nodes
+    security_groups  = [aws_security_group.nodes.id]
+    assign_public_ip = false
+
+  }
+
+  capacity_provider_strategy {
+    capacity_provider = "FARGATE"
+    weight            = 1
+  }
+
+  platform_version    = "LATEST"
+  scheduling_strategy = "REPLICA"
+
+
+  task_definition = aws_ecs_task_definition.edge.arn
+
+}
