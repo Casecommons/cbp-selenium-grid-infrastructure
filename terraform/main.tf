@@ -358,7 +358,7 @@ resource "aws_ecs_task_definition" "edge" {
   container_definitions = templatefile("edge.task.json",
     {
       aws_region    = var.aws_region
-      image         = var.edge
+      image         = var.edge_image
       app_name      = var.app_name
     }
   )

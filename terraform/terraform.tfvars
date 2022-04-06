@@ -12,3 +12,5 @@ chrome_cpu = 2048
 chrome_mem = 4096
 firefox_cpu = 2048
 firefox_mem = 4096
+edge_cpu = 2048
+edge_mem = 4096
