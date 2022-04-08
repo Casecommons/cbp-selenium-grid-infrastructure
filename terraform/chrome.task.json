@@ -37,10 +37,6 @@
                 "name": "SE_NODE_OVERRIDE_MAX_SESSIONS",
                 "value": "true"
             },
-            {   
-                "name": "SE_SESSION_REQUEST_TIMEOUT",
-                "value": "7200"
-            },
             {
                 "name": "SCREEN_HEIGHT",
                 "value": "1080"
