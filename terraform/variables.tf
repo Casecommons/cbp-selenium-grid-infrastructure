@@ -127,7 +127,7 @@ variable "edge_min_tasks" {
 
 variable "chrome_max_tasks" {
   type = number
-  default = 4
+  default = 8
 }
 
 variable "firefox_max_tasks" {
