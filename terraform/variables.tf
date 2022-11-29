@@ -97,17 +97,17 @@ variable "edge_cpu_scale_in_threshold" {
 
 variable "chrome_cpu_scale_out_threshold" {
   type = number
-  default = 90
+  default = 30
 }
 
 variable "firefox_cpu_scale_out_threshold" {
   type = number
-  default = 90
+  default = 30
 }
 
 variable "edge_cpu_scale_out_threshold" {
   type = number
-  default = 90
+  default = 30
 }
 
 variable "chrome_min_tasks" {
