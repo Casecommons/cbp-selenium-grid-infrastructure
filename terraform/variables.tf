@@ -20,25 +20,25 @@ variable "vpc_id" {
 variable "hub_image" {
   type        = string
   description = "The selenium container image to use for the hub node"
-  default = "selenium/hub:4.4.0-20220831"
+  default = "selenium/hub:4.8.0-20230210"
 }
 
 variable "chrome_image" {
   type        = string
   description = "The selenium container image to use for the chrome nodes"
-  default = "selenium/node-chrome:4.4.0-20220831"
+  default = "selenium/node-chrome:4.8.0-20230210"
 }
 
 variable "firefox_image" {
   type        = string
   description = "The selenium container image to use for the firefox nodes"
-  default = "selenium/node-firefox:4.4.0-20220831"
+  default = "selenium/node-firefox:4.8.0-20230210"
 }
 
 variable "edge_image" {
   type        = string
   description = "The selenium container image to use for the edge nodes"
-  default = "selenium/node-edge:4.4.0-20220831"
+  default = "selenium/node-edge:4.8.0-20230210"
 }
 
 variable "subnet_ids_elb" {
