@@ -8,9 +8,14 @@ subnet_ids_elb = ["subnet-01db5721deb8de1cc", "subnet-0d3aebcc8da169289", "subne
 
 hub_cpu = 1024
 hub_mem = 2048
-chrome_cpu = 2048
-chrome_mem = 4096
+
+#chrome_cpu = 2048
+#chrome_mem = 4096
+chrome_cpu = 8192
+chrome_mem = 16384
+
 firefox_cpu = 2048
 firefox_mem = 4096
+
 edge_cpu = 2048
 edge_mem = 4096
