@@ -12,6 +12,11 @@ variable "app_name" {
   description = "naming for this deployment, change this for multiple deployments"
 }
 
+variable "env" {
+  type        = string
+  description = "environment"
+}
+
 variable "vpc_id" {
   type        = string
   description = "The id of the vpc to deploy in"
@@ -26,7 +31,7 @@ variable "hub_image" {
 variable "chrome_image" {
   type        = string
   description = "The selenium container image to use for the chrome nodes"
-  default = "selenium/node-chrome:4.8.0-20230210"
+  default = "selenium/node-chrome:129.0-20241010"
 }
 
 variable "firefox_image" {
@@ -82,17 +87,17 @@ variable "edge_scale_up" {
 
 variable "chrome_cpu_scale_in_threshold" {
   type = number
-  default = 10
+  default = 15
 }
 
 variable "firefox_cpu_scale_in_threshold" {
   type = number
-  default = 10
+  default = 15
 }
 
 variable "edge_cpu_scale_in_threshold" {
   type = number
-  default = 10
+  default = 15
 }
 
 variable "chrome_cpu_scale_out_threshold" {

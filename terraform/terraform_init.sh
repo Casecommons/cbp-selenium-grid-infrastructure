@@ -16,8 +16,15 @@ then
   exit 0
 fi
 
+terraform --version
+
+if [ ${upgrade_version}x == truex ]
+then
+  upgrade_param='-upgrade'
+fi
+
 # build for all envs
-terraform init -backend-config="bucket=cbp-tfstate" -backend-config="region=us-east-1" -backend-config="key=selenium_grid_state"
+terraform init -backend-config="bucket=cbp-tfstate" -backend-config="region=us-east-1" -backend-config="key=selenium_grid_state" ${upgrade_param}
 set +e
 terraform workspace new selenium.dev.us-east-1
 set -e
