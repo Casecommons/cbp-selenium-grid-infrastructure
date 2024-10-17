@@ -1,21 +1,20 @@
-# This file is maintained automatically by "terraform init".
+# This file is maintained automatically by "tofu init".
 # Manual edits may be lost in future updates.
 
-provider "registry.terraform.io/hashicorp/aws" {
-  version     = "3.74.3"
+provider "registry.opentofu.org/hashicorp/aws" {
+  version     = "3.76.1"
   constraints = "~> 3.63"
   hashes = [
-    "h1:xF3FkhB/QIiP1njNEBGwbsOiHXVI2aTgW3QlF7oGDqE=",
-    "zh:25401cd4667d0496caf7e92e74ecef7c98cf74465570705cda2207770c27ff6c",
-    "zh:2d154527a9b2585f72fc5eceac635257e3f50f68de8a519e71c795d5166a0a22",
-    "zh:499fa5201804a5a33a90d683147fb2f81da91bfcd8ed20293f88f6f39cedbf97",
-    "zh:730284250fd949a59afb6935b3a68a33709d5a78b686fa98f351ad32c919cfc3",
-    "zh:7461ebd6fb35900d620cfa3f42126d988ea1e604ee3828d1c64d5727f908bd26",
-    "zh:7c85743b31c7459f8e74aaa98471ba82c54517eb908603411808a12982d89b1c",
-    "zh:8ed977b7fb97de624f5414b08cab36fd973a624072e0e9082c0c822e0864c7b9",
-    "zh:94ae7313bb0b425d4007a0b70601a337972c4f0f7a323487acf69215e74b4425",
-    "zh:b5a1589672d709da725a72c46d28bf5b2dea71325f6e0b44a0049f644cd09eba",
-    "zh:c7e8e7ce59e4578416557fc2f138137af3c8365ac3e34f0ff5166323c7d641a1",
-    "zh:ccf2e286b207e749fff76bb4075deddb9e7e237936d8654f34828c54e7035455",
+    "h1:3ffHPLe4oA75h+3ZBOJB/ZMn26DMjrCQfzqyWE1c3VY=",
+    "zh:0f89f65f6ed18d2494cdf32e52cc5f901b777be2bc88fa4083384fb970d7681f",
+    "zh:27c186f42e6b9e52999326c1eb980a6671ca9f8e25dc4d4ba89dae511fc2999c",
+    "zh:32beaeebc296e382fcef5b7aeea63c5c4559e4594df51c5454096858eaa8d041",
+    "zh:5144d9508eeceba201f9c08352733b2bf5e0c32cbc1c791cea36e17057e240d8",
+    "zh:775dba94213786ffe0ba5d021f6616d6c13ca143d5d7d6f62b281667c69552c6",
+    "zh:adb805d8379b88e34e3eeb1d575e2947bcdc96422b59533b15d49262d3f8b89c",
+    "zh:c7653e132bed1b1af404ebac77ba44e2eb14ebe3c787f2ebcf3aaab4ff119da9",
+    "zh:dbb3f32cb4bd65d14ad095b604e26ebf94b0c6cf6072404a469dfc9a5e2957da",
+    "zh:f430eee3f19c5f646bc56c326a1446d7d54cabb865fd76acf300ee7dd3c6e797",
+    "zh:fa3765abb4b2e1d331e1ae2c4ff39525659b0b3a9455d0fb0880e0bdff78daad",
   ]
 }
